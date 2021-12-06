@@ -557,6 +557,8 @@ button {
   box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+
+  color: var(--second-footer-color);
   background-color: transparent;
 }
 
@@ -645,6 +647,13 @@ button {
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+
+  transition: fill 250ms var(--animation);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  fill: var(--accent-color);
 }
 
 .is-hidden {
@@ -685,6 +694,8 @@ button {
   position: absolute;
   top: 29px;
   left: 12px;
+
+  transition: fill 250ms var(--animation);
 }
 
 .modal-input {
@@ -696,6 +707,8 @@ button {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+
+  transition: border-color 250ms var(--animation);
 }
 
 .modal-input:focus + .modal-icon {
@@ -716,6 +729,8 @@ button {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+
+  transition: border-color 250ms var(--animation);
 }
 
 .modal-comment::placeholder {
@@ -733,9 +748,16 @@ button {
 }
 
 .modal-privacy {
+  display: flex;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 30px;
+}
+
+.modal-privacy-label {
+  display: flex;
+  align-items: center;
+
   font-weight: normal;
   font-size: 14px;
   line-height: 1.71;
@@ -753,13 +775,28 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+  position: absolute;
 }
 
-.modal-icon-check {
+.modal-checkbox:checked + .check-icon {
+  background-image: url(../images/check-icon.svg);
+  fill: #ffffff;
+  background-color: var(--accent-color);
+  background-repeat: no-repeat;
+  background-size: contain;
   width: 16px;
   height: 15px;
-  background-color: var(--accent-color);
-  fill: #ffffff;
+}
+
+.check-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 9px;
+  background-image: url(../images/check-border.svg);
+
+  transition: background-color 250ms var(--animation);
 }
 
 .modal-btn {
